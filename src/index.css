@@ -1,0 +1,296 @@
+:root {
+  --color-body: #e9d6ff;
+  --color-bg-container: #674bce;
+  --color-task: #a994f5;
+  --color-task-complited: #532caf;
+  --color-text: #2a165a;
+  --color-button: #4e2aa2;
+  --color-bg-button: #936bff;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 2rem;
+  font-family: var(--font-family), serif;
+  background: var(--color-body);
+  color: white;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container {
+  width: 60vw;
+  max-width: 100%;
+  min-height: 70vh;
+  padding: 2rem;
+  background-color: var(--color-bg-container);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.app-title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-button);
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 2px solid var(--color-body);
+}
+
+.remaining-todos {
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 1100px) {
+  .app-container {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .app-container {
+    width: 90vw;
+    padding: 1.5rem;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .add-task-form input[type="text"] {
+    height: 45px;
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  form button[type="submit"] {
+    height: 45px;
+    flex: 0 0 80px;
+    font-size: 0.9rem;
+  }
+
+  .filter-buttons button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .todo-item {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .todo-text {
+    font-size: 0.95rem;
+  }
+
+  .todo-checkbox {
+    transform: scale(1.3);
+    margin-right: 0.8rem;
+  }
+
+  .delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 50%;
+    position: relative;
+    font-size: 0;
+    color: transparent;
+  }
+
+  .delete-btn::before,
+  .delete-btn::after {
+    width: 14px;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: white;
+  }
+
+  .delete-btn::before {
+    transform: rotate(45deg);
+  }
+
+  .delete-btn::after {
+    transform: rotate(-45deg);
+  }
+
+  .remaining-todos {
+    font-size: 0.9rem;
+  }
+
+  .trash-bin svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .trash-count {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    width: 95vw;
+    padding: 1rem;
+  }
+
+  .app-title {
+    font-size: 1.8rem;
+  }
+
+  .add-task-form input[type="text"] {
+    height: 42px;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  form button[type="submit"] {
+    height: 42px;
+    flex: 0 0 75px;
+    font-size: 0.85rem;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .filter-buttons button {
+    min-width: 0;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    text-align: center;
+    flex: 1;
+  }
+
+  .todo-item {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .todo-text {
+    font-size: 0.9rem;
+  }
+
+  .todo-checkbox {
+    margin-right: 0.6rem;
+    transform: scale(1.2);
+  }
+
+  .delete-btn {
+    width: 26px;
+    height: 26px;
+  }
+
+  .delete-btn::before,
+  .delete-btn::after {
+    width: 12px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    width: 95vw;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .app-title {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .controls-wrapper {
+    margin-bottom: 1rem;
+    gap: 0.75rem;
+  }
+
+  .footer-container {
+    padding-top: 0.75rem;
+  }
+
+  .remaining-todos {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-container {
+    width: 98vw;
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .app-title {
+    font-size: 1.4rem;
+  }
+
+  .controls-wrapper {
+    gap: 0.5rem;
+  }
+}

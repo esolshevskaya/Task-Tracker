@@ -1,0 +1,78 @@
+form button[type="submit"] {
+    height: 50px;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    border-radius: 0 8px 8px 0;
+    border-left: none;
+    font-size: 1rem;
+    flex: 0 0 90px;
+}
+
+.add-task-form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+}
+
+.add-task-form input[type="text"] {
+
+    min-width: 0;
+    height: 50px;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    outline: none;
+    flex: 1 1 auto;
+}
+
+.add-task-form input[type="text"]::placeholder {
+    color: #8a7aa5;
+    opacity: 0.8;
+}
+
+form button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    font-size: 1rem;
+    border-radius: 0 8px 8px 0;
+    border-left: none;
+    flex: 0 0 90px;
+}
+
+@media (max-width: 480px) {
+    .add-task-form input[type="text"] {
+        height: 44px;
+        padding: 0.6rem;
+        font-size: 0.95rem;
+    }
+
+    form button[type="submit"] {
+        height: 44px;
+        padding: 0.75rem 0.8rem;
+        font-size: 0.9rem;
+        flex: 0 0 80px;
+    }
+}
+
+@media (max-width: 360px) {
+    .add-task-form input[type="text"] {
+        height: 40px;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    form button[type="submit"] {
+        height: 40px;
+        padding: 0.75rem 0.6rem;
+        font-size: 0.85rem;
+        flex: 0 0 70px;
+    }
+}

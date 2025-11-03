@@ -1,0 +1,24 @@
+.trash-bin {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.trash-bin:hover svg {
+    transform: scale(1.1);
+}
+
+.trash-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    top: -0.3125rem;
+    right: -0.3125rem;
+    font-size: 0.85rem;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+}

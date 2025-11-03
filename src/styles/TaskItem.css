@@ -1,0 +1,283 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+    border-radius: 12px;
+    background-color: var(--color-task);
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+.todo-item:hover {
+    background-color: #9378f2;
+}
+
+.todo-item.completed {
+    background-color: var(--color-task-complited);
+}
+
+.todo-text {
+    min-width: 0;
+    margin: 0 0.5rem 0 0;
+    color: white;
+    overflow-wrap: break-word;
+    flex: 1 1 auto;
+}
+
+.todo-checkbox {
+    margin-right: 1rem;
+    transform: scale(1.4);
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.edit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    color: white;
+    background-color: transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.edit-btn:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.edit-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.edit-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.delete-btn {
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #ff3d3d;
+    color: white;
+    white-space: nowrap;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #e70d0d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.edit-container {
+    display: flex;
+    align-items: center;
+    border: none;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.todo-edit-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 2px solid var(--color-button);
+    border-radius: 4px;
+    background: white;
+    color: var(--color-text);
+    font-size: inherit;
+    outline: none;
+    min-width: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.todo-edit-input:focus {
+    border-color: var(--color-bg-button);
+    box-shadow: 0 0 0 2px rgba(126, 82, 229, 0.2);
+    outline: none;
+}
+
+.todo-edit-input::-webkit-input-placeholder {
+    color: #8a7aa5;
+}
+
+.todo-edit-input::-moz-placeholder {
+    color: #8a7aa5;
+}
+
+.todo-edit-input:-ms-input-placeholder {
+    color: #8a7aa5;
+}
+
+.todo-edit-input::-ms-input-placeholder {
+    color: #8a7aa5;
+}
+
+.todo-edit-input::placeholder {
+    color: #8a7aa5;
+}
+
+.edit-actions {
+    display: flex;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.save-btn, .cancel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.save-btn {
+    background-color: var(--color-button);
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: var(--color-task-complited);
+    transform: scale(1.05);
+}
+
+.cancel-btn {
+    background-color: #ff3d3d;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #e70d0d;
+    transform: scale(1.05);
+}
+
+.completed-text {
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+    .todo-item, .add-task-form input[type="text"] {
+        font-size: 1rem;
+    }
+
+    .delete-btn {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border-radius: 50%;
+        position: relative;
+        font-size: 0;
+        color: transparent;
+    }
+
+    .delete-btn::before,
+    .delete-btn::after {
+        width: 14px;
+        height: 2px;
+        background-color: white;
+        content: '';
+        position: absolute;
+    }
+
+    .delete-btn::before { transform: rotate(45deg); }
+    .delete-btn::after { transform: rotate(-45deg); }
+
+    .edit-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .edit-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .todo-item, .add-task-form input[type="text"] {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-item, .add-task-form input[type="text"] {
+        font-size: 0.85rem;
+    }
+
+    .todo-item {
+        padding: 0.8rem;
+        gap: 0.4rem;
+    }
+
+    .task-actions {
+        gap: 0.3rem;
+    }
+
+    .edit-container {
+        gap: 0.3rem;
+    }
+
+    .save-btn, .cancel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .todo-edit-input {
+        padding: 0.4rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .todo-item, .add-task-form input[type="text"] {
+        font-size: 0.8rem;
+    }
+
+    .todo-item {
+        padding: 0.7rem;
+        gap: 0.3rem;
+    }
+
+    .task-actions {
+        gap: 0.2rem;
+    }
+
+    .edit-actions {
+        gap: 0.2rem;
+    }
+
+    .save-btn, .cancel-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 0.75rem;
+    }
+}
