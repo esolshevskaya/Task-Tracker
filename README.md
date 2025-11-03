@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# React TaskTracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Одностраничное веб-приложение для управления задачами, созданное на основе React и TypeScript. Приложение демонстрирует использование функциональных компонентов, хуков и адаптивной вёрстки на чистом CSS. Сборка и запуск выполняются с помощью Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Функционал
 
-## React Compiler
+Пользователь может:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* добавлять новые задачи через форму ввода
+* редактировать существующие задачи
+* отмечать задачи как выполненные и отменять отметку
+* удалять задачи, перемещая их в корзину
+* восстанавливать удалённые задачи
+* фильтровать список (все, активные, выполненные)
+* получать уведомление при попытке добавить дубликат
+* использовать приложение на устройствах с любым размером экрана благодаря адаптивной вёрстке
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Технологический стек
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **React (TypeScript)** — компонентная архитектура и строгая типизация
+* **React Hooks (useState, useEffect)** — управление состоянием и жизненным циклом компонентов
+* **CSS (медиа-запросы)** — адаптивная вёрстка без сторонних UI-библиотек
+* **Vite** — современный инструмент сборки и локального запуска
+* **ESLint + Prettier** — контроль качества и единообразия кода
+* **ReactDOM** — рендеринг пользовательского интерфейса
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+## Структура проекта
+
+```
+src/
+|
+├── components/
+│   ├── AddTaskForm.tsx
+│   ├── TaskItem.tsx
+│   ├── TaskList.tsx
+│   ├── FilterPanel.tsx
+│   ├── TrashBin.tsx
+│   ├── DeletedTaskModal.tsx
+│   └── Notification.tsx
+├── styles/
+│   ├── AddTaskForm.css
+│   ├── TaskItem.css
+│   ├── FilterPanel.css
+│   ├── TrashBin.css
+│   ├── DeletedTaskModal.css
+│   └── Notification.css
+├── types/
+│   └── index.ts
+├── App.tsx
+├── App.css
+├── main.tsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Минимальные требования к окружению
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* **Node.js:** версии **18.x** или выше
+* **npm:** версии **9.x** или выше
+* **Vite:** версии **7.x**
+* **TypeScript:** версии **5.9**
+* **React:** версии **19**
+
+---
+
+## Установка и запуск
+
+1. Установить зависимости:
+
+   ```bash
+   npm install
+   ```
+2. Запустить проект:
+
+   ```bash
+   npm run dev
+   ```
+3. Приложение будет доступно по адресу:
+
+   ```
+   http://localhost:5173
+   ```
+---
+
+## Связаться со мной:
+Email: o-alena-o@yandex.ru
